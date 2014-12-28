@@ -7,7 +7,9 @@ import java.awt.*;
  * Created by Administrator on 2014/12/27.
  */
 public class FractalPanel extends JPanel {
-    private Cantor cantor = new Cantor(100, 100, 800, 100, new Color(108, 187, 219));
+    private Color color = new Color(43, 77, 219);
+    private Cantor cantor = new Cantor(100, 100, 800, 100, this.color);
+    private Koch koch = new Koch(100, 100, 800, 100, this.color);
     private ShapeStyle style;
 
     public FractalPanel() {
@@ -25,6 +27,10 @@ public class FractalPanel extends JPanel {
                 this.drawCantor(g);
                 break;
             }
+            case KOCH: {
+                this.drawKoch(g);
+                break;
+            }
             case BLANK: {
                 break;
             }
@@ -33,5 +39,9 @@ public class FractalPanel extends JPanel {
 
     private void drawCantor(Graphics g) {
         this.cantor.draw(g);
+    }
+
+    private void drawKoch(Graphics g) {
+        this.koch.draw(g);
     }
 }

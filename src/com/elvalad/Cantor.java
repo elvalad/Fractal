@@ -10,7 +10,7 @@ public class Cantor {
     private double y1;
     private double x2;
     private double y2;
-    private Color color = new Color(108, 187, 219);
+    private Color color = new Color(43, 77, 219);
 
     /**
      * Cantor的构造函数
@@ -19,7 +19,7 @@ public class Cantor {
      * @param x2 Cantor终止点的横坐标
      * @param y2 Cantor终止点的纵坐标
      */
-    public Cantor(int x1, int y1, int x2, int y2, Color color) {
+    public Cantor(double x1, double y1, double x2, double y2, Color color) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
@@ -39,10 +39,10 @@ public class Cantor {
     /**
      *
      * @param g
-     * @param x1
-     * @param y1
-     * @param x2
-     * @param y2
+     * @param x1 Cantor起始点的横坐标
+     * @param y1 Cantor起始点的纵坐标
+     * @param x2 Cantor终止点的横坐标
+     * @param y2 Cantor终止点的纵坐标
      */
     private void drawShape(Graphics g, double x1, double y1, double x2, double y2) {
         g.setColor(this.color);

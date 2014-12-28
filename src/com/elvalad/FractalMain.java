@@ -9,6 +9,7 @@ public class FractalMain extends JFrame implements ActionListener {
     private JMenu fractalMenu;
     private JMenuItem blankItem;
     private JMenuItem cantorItem;
+    private JMenuItem kochItem;
     private ShapeStyle style;
     private FractalPanel fractalPanel = new FractalPanel();
 
@@ -40,6 +41,7 @@ public class FractalMain extends JFrame implements ActionListener {
      * Menu: fractalMenu
      *      MenuItem: blankItem
      *      MenuItem: cantorItem
+     *      MenuItem: kochItem
      */
     private void buildMenuBar() {
         this.menuBar = new JMenuBar();
@@ -48,9 +50,12 @@ public class FractalMain extends JFrame implements ActionListener {
         this.blankItem.addActionListener(this);
         this.cantorItem = new JMenuItem("Cantor");
         this.cantorItem.addActionListener(this);
+        this.kochItem = new JMenuItem("Koch");
+        this.kochItem.addActionListener(this);
         this.menuBar.add(this.fractalMenu);
         this.fractalMenu.add(this.blankItem);
         this.fractalMenu.add(this.cantorItem);
+        this.fractalMenu.add(this.kochItem);
     }
 
     /**
@@ -74,6 +79,15 @@ public class FractalMain extends JFrame implements ActionListener {
     }
 
     /**
+     * 绘制Koch曲线
+     */
+    private void drawKochOnPanel() {
+        this.style = ShapeStyle.KOCH;
+        this.fractalPanel.setPaintStype(this.style);
+        this.repaint();
+    }
+
+    /**
      *
      * @param e awt事件接口，用于判断此时是哪种事件来选择执行不同的方法
      */
@@ -82,6 +96,8 @@ public class FractalMain extends JFrame implements ActionListener {
             this.drawBlankOnPanel();
         } else if (e.getSource() == this.cantorItem) {
             this.drawCantorOnPanel();
+        } else if (e.getSource() == this.kochItem) {
+            this.drawKochOnPanel();
         }
     }
 
