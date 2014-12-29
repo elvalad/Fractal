@@ -12,6 +12,8 @@ public class Koch {
     private double y2;
     private Color color = new Color(43, 77, 219);
 
+    public Koch() {}
+
     /**
      * Koch曲线构造函数
      * @param x1 Koch曲线起始点横坐标
@@ -44,7 +46,7 @@ public class Koch {
      * @param x2 Koch曲线终止点横坐标
      * @param y2 Koch曲线终止点纵坐标
      */
-    private void drawShape(Graphics g, double x1, double y1, double x2, double y2) {
+    protected void drawShape(Graphics g, double x1, double y1, double x2, double y2) {
         double c = 1.0;
         double x3 = 0;
         double y3 = 0;
