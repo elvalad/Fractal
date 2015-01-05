@@ -11,6 +11,8 @@ public class FractalMain extends JFrame implements ActionListener {
     private JMenuItem cantorItem;
     private JMenuItem kochItem;
     private JMenuItem kochSnowItem;
+    private JMenuItem arboresentItem;
+    private JMenuItem tree1Item;
     private ShapeStyle style;
     private FractalPanel fractalPanel = new FractalPanel();
 
@@ -56,11 +58,17 @@ public class FractalMain extends JFrame implements ActionListener {
         this.kochItem.addActionListener(this);
         this.kochSnowItem = new JMenuItem("KochSnow");
         this.kochSnowItem.addActionListener(this);
+        this.arboresentItem = new JMenuItem("Arboresent");
+        this.arboresentItem.addActionListener(this);
+        this.tree1Item = new JMenuItem("Tree1");
+        this.tree1Item.addActionListener(this);
         this.menuBar.add(this.fractalMenu);
         this.fractalMenu.add(this.blankItem);
         this.fractalMenu.add(this.cantorItem);
         this.fractalMenu.add(this.kochItem);
         this.fractalMenu.add(this.kochSnowItem);
+        this.fractalMenu.add(this.arboresentItem);
+        this.fractalMenu.add(this.tree1Item);
     }
 
     /**
@@ -103,6 +111,24 @@ public class FractalMain extends JFrame implements ActionListener {
 
     /**
      *
+     */
+    private void drawArboresentOnPanel() {
+        this.style = ShapeStyle.ARBORESENT;
+        this.fractalPanel.setPaintStype(this.style);
+        this.repaint();
+    }
+
+    /**
+     *
+     */
+    private void drawTree1OnPanel() {
+        this.style = ShapeStyle.TREE1;
+        this.fractalPanel.setPaintStype(this.style);
+        this.repaint();
+    }
+
+    /**
+     *
      * @param e awt事件接口，用于判断此时是哪种事件来选择执行不同的方法
      */
     public void actionPerformed(ActionEvent e) {
@@ -114,6 +140,10 @@ public class FractalMain extends JFrame implements ActionListener {
             this.drawKochOnPanel();
         } else if (e.getSource() == this.kochSnowItem) {
             this.drawKochSnowOnPanel();
+        } else if (e.getSource() == this.arboresentItem) {
+            this.drawArboresentOnPanel();
+        } else if (e.getSource() == this.tree1Item) {
+            this.drawTree1OnPanel();
         }
     }
 
