@@ -56,7 +56,6 @@ public class Koch {
         double y5 = 0;
         double l = 0;
         double alpha = 0;
-        g.setColor(this.color);
         if (((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y2)) < c) {
             g.drawLine((int)x1, 500 - (int)y1, (int)x2, 500 - (int)y2);
         } else {
