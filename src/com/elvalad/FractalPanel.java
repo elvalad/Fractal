@@ -7,12 +7,12 @@ import java.awt.*;
  * Created by Administrator on 2014/12/27.
  */
 public class FractalPanel extends JPanel {
-    private Color color = new Color(25, 219, 21);
+    private Color color = new Color(23, 219, 163);
     private Cantor cantor = new Cantor(100, 100, 800, 100, this.color);
     private Koch koch = new Koch(100, 100, 800, 100, this.color);
     private KochSnow kochSnow = new KochSnow(200, 250, 800, 250, 500, 250 - 600 * Math.sin(Math.PI/3), this.color);
     private Arboresent arboresent = new Arboresent();
-    private Tree1 tree1 = new Tree1(500, 800, 270, 9, this.color);
+    private Tree1 tree1 = new Tree1(500, 850, 270, 9, 17, this.color);
     private ShapeStyle style;
 
     public FractalPanel() {
